@@ -25,7 +25,7 @@ const TeamCard: FC<TeamCardProps> = ({
   return (
     <Flex
       m={[8, 8, 8, 4]}
-      className={`${isAnimated && "animate__animated animate__" + animation}`}
+      // className={`${isAnimated && "animate__animated animate__" + animation}`}
       ref={dom}
       bgGradient={
         colorMode === "light"
@@ -41,10 +41,16 @@ const TeamCard: FC<TeamCardProps> = ({
       shadow="lg"
     >
       <Image src={`../images/${image}`} w={175} rounded="full" alt="team" />
-      <Text mt={4} fontSize="4xl">
+      <Text
+        fontFamily={"NotoSansCJKkr"}
+        fontSize="30"
+        mt={2}
+        fontWeight="bold"
+        color={"c88be0"}
+      >
         {name}
       </Text>
-      <Text mt={2} fontSize="2xl" fontWeight="bold">
+      <Text mt={2} fontSize="20" color={"c88be0"}>
         {position}
       </Text>
     </Flex>

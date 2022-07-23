@@ -5,6 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 // @ 타이틀 이미지는 이미지에 마우스를 올리면 Gif 이미지가 나오도록 하였습니다. public/images 교체하셔서 사용하시면 됩니다.
 const titleImage = "title.png";
 const titleImageGif = "title.gif";
+const storyImage = "lion.gif";
 
 const Title: FC = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -18,29 +19,71 @@ const Title: FC = () => {
       id="Title"
       px={4}
       w="full"
+      bgColor={"#c88be0"}
     >
-      <Box></Box>
+      <Box height={40}></Box>
       <Box position="relative">
         <Image
           src={`../images/${titleImage}`}
           position="absolute"
-          opacity={isHover ? 0 : 1}
-          onMouseEnter={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-          alt="title"
+          // opacity={isHover ? 0 : 1}
+          // onMouseEnter={() => setIsHover(true)}
+          // onMouseLeave={() => setIsHover(false)}
+          // alt="title"
         />
         <Image src={`../images/${titleImageGif}`} alt="title" />
       </Box>
-      <ScrollLink to="Story" spy={true} smooth={true}>
-        <Button
-          variant="ghost"
-          fontSize="4xl"
-          mb={8}
-          className="animate__animated animate__heartBeat animate__infinite"
-        >
-          ↓
-        </Button>
-      </ScrollLink>
+      <Box height={65}></Box>
+      <Flex flexDir="row" alignItems="center" justifyContent="space-around">
+        <Image
+          src={`../images/${storyImage}`}
+          borderRadius="2xl"
+          width={200}
+          height={200}
+        />
+        <Box width={10}></Box>
+        <Image
+          src={`../images/${storyImage}`}
+          borderRadius="2xl"
+          width={200}
+          height={200}
+        />
+        <Box width={10}></Box>
+
+        <Image
+          src={`../images/${storyImage}`}
+          borderRadius="2xl"
+          width={200}
+          height={200}
+        />
+        <Box width={10}></Box>
+
+        <Image
+          src={`../images/${storyImage}`}
+          borderRadius="2xl"
+          width={200}
+          height={200}
+        />
+        <Box width={10}></Box>
+
+        <Image
+          src={`../images/${storyImage}`}
+          borderRadius="2xl"
+          width={200}
+          height={200}
+        />
+      </Flex>
+      <Box height={65}></Box>
+      <Button
+        borderRadius={64}
+        height={10}
+        bgColor="#519cf9"
+        color="#fff"
+        fontFamily={"NotoSansCJKkr"}
+        fontWeight="bold"
+      >
+        CHECK IT ON OPENSEA!
+      </Button>
     </Flex>
   );
 };

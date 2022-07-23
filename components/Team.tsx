@@ -1,4 +1,4 @@
-import { Box, Flex, Grid } from "@chakra-ui/react";
+import { Box, Flex, Grid, Button } from "@chakra-ui/react";
 import { useTranslation } from "next-i18next";
 import { FC } from "react";
 import TeamCard from "./TeamCard";
@@ -6,31 +6,31 @@ import TeamCard from "./TeamCard";
 // @ name: 팀원 이름, position: 포지션, image: public/images에 있는 이미지 이름, color: color 이름 (모든 색상이 가능하지는 않습니다.)
 const teamCardConfig = [
   {
-    name: "h662",
-    position: "Product Manager",
+    name: "PKD",
+    position: "Tech Leader",
     image: "team1.png",
-    color: "blue",
+    color: "white",
     animation: "tada",
   },
   {
-    name: "h663",
-    position: "Frontend",
+    name: "BHJ",
+    position: "Product Designer",
     image: "team2.png",
-    color: "yellow",
+    color: "white",
     animation: "tada",
   },
   {
-    name: "h664",
-    position: "Graphic Design",
+    name: "SSUN LEE",
+    position: "Community Manager",
     image: "team3.png",
-    color: "green",
+    color: "white",
     animation: "tada",
   },
   {
-    name: "h665",
-    position: "Smart Contract",
+    name: "MNY",
+    position: "Frontend",
     image: "team4.png",
-    color: "red",
+    color: "white",
     animation: "tada",
   },
 ];
@@ -40,11 +40,18 @@ const Team: FC = () => {
 
   return (
     <Flex minH="100vh" alignItems="center" id="Team" flexDir="column">
-      <Box fontSize="6xl" fontWeight="bold" mt={4}>
-        {t("team")}
+      <Flex height={220}></Flex>
+      <Box
+        textAlign="center"
+        mb={8}
+        fontFamily="NotoSansKR"
+        fontSize="40"
+        fontWeight="bold"
+        color="#c88be0"
+      >
+        TEAM
       </Box>
       <Grid
-        mt={16}
         templateColumns={[
           "repeat(1, 1fr)",
           "repeat(1, 1fr)",
@@ -65,6 +72,31 @@ const Team: FC = () => {
           );
         })}
       </Grid>
+      <Flex height={330}></Flex>
+      <Flex>
+        <Box
+          textAlign="center"
+          mb={8}
+          fontFamily="NotoSansKR"
+          fontSize="40"
+          fontWeight="bold"
+          color="#c88be0"
+        >
+          PARTNERS
+        </Box>
+        <Flex height="130"></Flex>
+      </Flex>
+      <Button
+        borderRadius={64}
+        height={10}
+        bgColor="#519cf9"
+        color="#fff"
+        fontFamily={"NotoSansCJKkr"}
+        fontWeight="bold"
+      >
+        JOIN US!
+      </Button>
+      <Flex height="250"></Flex>
     </Flex>
   );
 };

@@ -1,6 +1,13 @@
 import { FC } from "react";
 import { useRouter } from "next/router";
-import { Box, Button, Flex, Image, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  color,
+  Flex,
+  Image,
+  useColorMode,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
@@ -8,7 +15,6 @@ import { IoMoon, IoSunny } from "react-icons/io5";
 
 // @ 로고 이미지는 public/images를 교체하시면 됩니다. URL은 우리 프로젝트의 URL을 작성하시면 됩니다.
 const logoImage = "logo_black.png";
-const logoImageDark = "logo_white.png";
 const openseaURL = "https://testnets.opensea.io/collection/projectlion-nft";
 const discordURL = "https://discord.gg/JV4whBWNPs";
 const instagramURL = "https://www.instagram.com/projectlion.io/";
@@ -25,32 +31,30 @@ const Header: FC = () => {
       position="fixed"
       w="100%"
       top="0"
-      justifyContent="space-between"
+      justifyContent="space-around"
       alignItems="center"
       px={8}
       shadow="md"
       zIndex={1}
       flexDir={["column", "column", "row"]}
       bgColor="#d9b5fd"
+      height={79}
     >
       <Box fontWeight="bold" fontSize="lg" cursor="pointer">
         <Link href="/">
-          <Image
-            w={200}
-            src={
-              colorMode === "light"
-                ? `../images/${logoImage}`
-                : `../images/${logoImageDark}`
-            }
-            alt="LOGO"
-          />
+          <Image w={200} src={`../images/${logoImage}`} alt="LOGO" />
         </Link>
       </Box>
       <Box>
         {scrollLink.map((v, i) => {
           return (
             <ScrollLink key={i} to={v} spy={true} smooth={true}>
-              <Button variant="ghost" mx={[0, 0, 8]} size={["xs", "sm", "md"]}>
+              <Button
+                variant="ghost"
+                mx={[0, 0, 8]}
+                size={["xs", "sm", "md"]}
+                color="#fff"
+              >
                 {v}
               </Button>
             </ScrollLink>
@@ -73,7 +77,7 @@ const Header: FC = () => {
             <FaInstagram size={24} />
           </Button>
         </Link>
-        <Box onClick={toggleColorMode}>
+        {/* <Box onClick={toggleColorMode}>
           {colorMode === "light" ? (
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               <IoMoon size={24} />
@@ -93,7 +97,7 @@ const Header: FC = () => {
               {router.locale === "en" ? "EN" : "KO"}
             </Button>
           </Link>
-        </Box>
+        </Box> */}
       </Flex>
     </Flex>
   );
