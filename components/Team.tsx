@@ -52,16 +52,14 @@ const Team: FC = () => {
       <Flex flexWrap={"wrap"} alignContent="center" justifyContent={"center"}>
         {teamCardConfig.map((v, i) => {
           return (
-            <Flex>
-              <TeamCard
-                key={i}
-                name={v.name}
-                position={v.position}
-                image={v.image}
-                color={v.color}
-                animation={v.animation}
-              />
-            </Flex>
+            <TeamCard
+              key={i}
+              name={v.name}
+              position={v.position}
+              image={v.image}
+              color={v.color}
+              animation={v.animation}
+            />
           );
         })}
       </Flex>
