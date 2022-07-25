@@ -11,6 +11,7 @@ const Footer: FC = () => {
 
   return (
     <Flex
+      w="100%"
       justifyContent="center"
       alignItems="center"
       flexDir="column"

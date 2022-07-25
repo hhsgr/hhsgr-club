@@ -5,6 +5,7 @@ import { FC } from "react";
 const Story: FC = () => {
   return (
     <Flex
+      w="100%"
       minH="100vh"
       justifyContent="center"
       alignItems="center"

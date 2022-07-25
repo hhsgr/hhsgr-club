@@ -17,7 +17,7 @@ const Title: FC = () => {
       alignItems="center"
       flexDir="column"
       id="Title"
-      w="full"
+      w="100%"
       bgColor="#c88be0"
     >
       <Box position="relative">

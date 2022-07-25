@@ -5,6 +5,7 @@ import { FC } from "react";
 const Benefits: FC = () => {
   return (
     <Flex
+      w="100%"
       minH="100vh"
       justifyContent="center"
       alignItems="center"

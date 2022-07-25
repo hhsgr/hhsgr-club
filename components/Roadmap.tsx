@@ -9,6 +9,7 @@ const roadmapImage = "roadmap.png";
 const Roadmap: FC = () => {
   return (
     <Flex
+      w="100%"
       minH="100vh"
       justifyContent="center"
       alignItems="center"

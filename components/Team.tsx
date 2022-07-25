@@ -39,7 +39,7 @@ const Team: FC = () => {
   const { t } = useTranslation("common");
 
   return (
-    <Flex minH="100vh" alignItems="center" id="Team" flexDir="column">
+    <Flex minH="100vh" alignItems="center" id="Team" flexDir="column" w="100%">
       <Flex height="200"></Flex>
       <Box
         textAlign="center"
