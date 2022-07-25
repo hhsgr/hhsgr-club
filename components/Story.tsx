@@ -5,6 +5,7 @@ import { FC } from "react";
 
 // @ 이미지는 public/images, 스토리 내용은 public/locales의 json 파일을 각각 수정해서 사용하시면 됩니다.
 const storyImage = "lion.gif";
+const roadmapImage = "roadmap.png";
 const storyConfig = [
   {
     mt: 0,
@@ -48,8 +49,13 @@ const Story: FC = () => {
         </Box>
         <Box height={800}></Box>
       </Flex>
-      <Flex w={["full%", "full%", "100%"]}>
-        <Box w={["full", "full%"]} p={8}>
+      <Flex w={["full%", "full%", "100%"]} flexDir="column">
+        <Flex
+          w={["full", "full%"]}
+          p={8}
+          alignItems="center"
+          justifyContent="center"
+        >
           <Text
             textAlign="center"
             mb={8}
@@ -60,7 +66,22 @@ const Story: FC = () => {
           >
             ROADMAP
           </Text>
-        </Box>
+        </Flex>
+        <Flex
+          w={["full", "full%"]}
+          p={8}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={`../images/${roadmapImage}`}
+            // position="center"
+            // alignItems={"center"}
+            justifyContent={"center"}
+          />
+          <Image />
+          <Flex width="10%"></Flex>
+        </Flex>
         <Box height={800}></Box>
       </Flex>
       <Flex w={["full%", "full%", "100%"]}>
@@ -77,7 +98,7 @@ const Story: FC = () => {
           </Text>
         </Box>
       </Flex>
-      <Flex height={330} flexDir="row">
+      <Flex height={330} flexDir={["column", "column", "row"]}>
         <Box
           width={550}
           height={330}

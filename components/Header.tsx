@@ -14,13 +14,13 @@ import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
 // @ 로고 이미지는 public/images를 교체하시면 됩니다. URL은 우리 프로젝트의 URL을 작성하시면 됩니다.
-const logoImage = "logo_black.png";
+const logoImage = "logo.png";
 const openseaURL = "https://testnets.opensea.io/collection/projectlion-nft";
 const discordURL = "https://discord.gg/JV4whBWNPs";
 const instagramURL = "https://www.instagram.com/projectlion.io/";
 
 const Header: FC = () => {
-  const scrollLink = ["Story", "Roadmap", "Team"];
+  const scrollLink = ["Story", "Roadmap", "Benefit", "Team"];
 
   const router = useRouter();
 
@@ -33,51 +33,56 @@ const Header: FC = () => {
       top="0"
       justifyContent="space-around"
       alignItems="center"
-      px={8}
+      px={0}
       shadow="md"
       zIndex={1}
       flexDir={["column", "column", "row"]}
       bgColor="#d9b5fd"
-      height={79}
+      // height={79}
     >
       <Box fontWeight="bold" fontSize="lg" cursor="pointer">
         <Link href="/">
-          <Image w={200} src={`../images/${logoImage}`} alt="LOGO" />
+          <Image src={`../images/${logoImage}`} alt="LOGO" padding="1" />
         </Link>
       </Box>
-      <Box>
-        {scrollLink.map((v, i) => {
-          return (
-            <ScrollLink key={i} to={v} spy={true} smooth={true}>
-              <Button
-                variant="ghost"
-                mx={[0, 0, 8]}
-                size={["xs", "sm", "md"]}
-                color="#fff"
-              >
-                {v}
-              </Button>
-            </ScrollLink>
-          );
-        })}
-      </Box>
-      <Flex alignItems="center" my={[4, 4, 0]}>
-        <Link href={openseaURL}>
-          <Button variant="ghost" size={["xs", "xs", "sm"]}>
-            <Image src="../images/opensea.png" alt="opensea" w={6} />
-          </Button>
-        </Link>
-        <Link href={discordURL}>
-          <Button variant="ghost" size={["xs", "xs", "sm"]}>
-            <FaDiscord size={24} />
-          </Button>
-        </Link>
-        <Link href={instagramURL}>
-          <Button variant="ghost" size={["xs", "xs", "sm"]}>
-            <FaInstagram size={24} />
-          </Button>
-        </Link>
-        {/* <Box onClick={toggleColorMode}>
+      <Flex alignItems="center">
+        <Box>
+          {scrollLink.map((v, i) => {
+            return (
+              <ScrollLink key={i} to={v} spy={true} smooth={true}>
+                <Button
+                  variant="ghost"
+                  mx={[0, 0, 8]}
+                  size={["xs", "sm", "md"]}
+                  color="#fff"
+                >
+                  {v}
+                </Button>
+              </ScrollLink>
+            );
+          })}
+        </Box>
+        <Flex
+          alignItems="center"
+          my={[4, 4, 0]}
+          flexDir={["column", "row", "row"]}
+        >
+          <Link href={openseaURL}>
+            <Button variant="ghost" size={["xs", "xs", "sm"]}>
+              <Image src="../images/opensea.png" alt="opensea" w={6} />
+            </Button>
+          </Link>
+          <Link href={discordURL}>
+            <Button variant="ghost" size={["xs", "xs", "sm"]}>
+              <FaDiscord size={24} />
+            </Button>
+          </Link>
+          <Link href={instagramURL}>
+            <Button variant="ghost" size={["xs", "xs", "sm"]}>
+              <FaInstagram size={24} />
+            </Button>
+          </Link>
+          {/* <Box onClick={toggleColorMode}>
           {colorMode === "light" ? (
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               <IoMoon size={24} />
@@ -98,6 +103,7 @@ const Header: FC = () => {
             </Button>
           </Link>
         </Box> */}
+        </Flex>
       </Flex>
     </Flex>
   );
