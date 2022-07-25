@@ -1,7 +1,9 @@
 import Footer from "@components/Footer";
-import Roadmap from "@components/Roadmap";
 import Story from "@components/Story";
+import Roadmap from "@components/Roadmap";
 import Team from "@components/Team";
+import Benefits from "@components/Benefits";
+import Partner from "@components/Partner";
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Title from "@components/Title";
@@ -11,7 +13,10 @@ const Home: NextPage = () => {
     <>
       <Title />
       <Story />
+      <Roadmap />
+      <Benefits />
       <Team />
+      <Partner />
       <Footer />
     </>
   );

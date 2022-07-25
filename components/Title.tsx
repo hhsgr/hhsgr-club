@@ -20,8 +20,8 @@ const Title: FC = () => {
       w="full"
       bgColor={"#c88be0"}
     >
-      <Box height="15%"></Box>
-      <Flex bgImage={`../images/${titleImage}`}></Flex>
+      <Box height="20%"></Box>
+      <Flex></Flex>
       <Box position="relative">
         <Image
           src={`../images/${titleImage}`}
@@ -89,6 +89,7 @@ const Title: FC = () => {
         color="#fff"
         fontFamily={"NotoSansCJKkr"}
         fontWeight="bold"
+        fontSize={"20"}
       >
         CHECK IT ON OPENSEA!
       </Button>

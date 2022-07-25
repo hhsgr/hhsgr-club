@@ -10,17 +10,20 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { FaDiscord, FaInstagram } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
 // @ 로고 이미지는 public/images를 교체하시면 됩니다. URL은 우리 프로젝트의 URL을 작성하시면 됩니다.
 const logoImage = "logo.png";
 const openseaURL = "https://testnets.opensea.io/collection/projectlion-nft";
-const discordURL = "https://discord.gg/JV4whBWNPs";
-const instagramURL = "https://www.instagram.com/projectlion.io/";
+const discordURL = "https://discord.gg/5MPRtfrr";
+const kakaoURL = "https://open.kakao.com/o/gtjsAJre";
+const twitterURL =
+  "https://twitter.com/HHSGR_TWC?s=20&t=qRlCtchfgiKO5Z_FCsAgGA";
+// const instagramURL = "https://www.instagram.com/projectlion.io/";
 
 const Header: FC = () => {
-  const scrollLink = ["Story", "Roadmap", "Benefit", "Team"];
+  const scrollLink = ["Story", "Roadmap", "Benefits", "Team"];
 
   const router = useRouter();
 
@@ -38,6 +41,7 @@ const Header: FC = () => {
       zIndex={1}
       flexDir={["column", "column", "row"]}
       bgColor="#d9b5fd"
+      opacity={"80%"}
       // height={79}
     >
       <Box fontWeight="bold" fontSize="lg" cursor="pointer">
@@ -77,11 +81,21 @@ const Header: FC = () => {
               <FaDiscord size={24} />
             </Button>
           </Link>
-          <Link href={instagramURL}>
+          <Link href={kakaoURL}>
+            <Button variant="ghost" size={["xs", "xs", "sm"]}>
+              <Image src="../images/kakao.png" alt="kakaotalk" w={6} />
+            </Button>
+          </Link>
+          <Link href={twitterURL}>
+            <Button variant="ghost" size={["xs", "xs", "sm"]}>
+              <FaTwitter size={24} />
+            </Button>
+          </Link>
+          {/* <Link href={instagramURL}>
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               <FaInstagram size={24} />
             </Button>
-          </Link>
+          </Link> */}
           {/* <Box onClick={toggleColorMode}>
           {colorMode === "light" ? (
             <Button variant="ghost" size={["xs", "xs", "sm"]}>

@@ -40,12 +40,12 @@ const Team: FC = () => {
 
   return (
     <Flex minH="100vh" alignItems="center" id="Team" flexDir="column">
-      <Flex height={220}></Flex>
+      <Flex height="200"></Flex>
       <Box
         textAlign="center"
         mb={8}
         fontFamily="NotoSansKR"
-        fontSize="40"
+        fontSize="4vw"
         fontWeight="bold"
         color="#c88be0"
       >
@@ -72,31 +72,6 @@ const Team: FC = () => {
           );
         })}
       </Grid>
-      <Flex height={330}></Flex>
-      <Flex>
-        <Box
-          textAlign="center"
-          mb={8}
-          fontFamily="NotoSansKR"
-          fontSize="40"
-          fontWeight="bold"
-          color="#c88be0"
-        >
-          PARTNERS
-        </Box>
-        <Flex height="130"></Flex>
-      </Flex>
-      <Button
-        borderRadius={64}
-        height={10}
-        bgColor="#519cf9"
-        color="#fff"
-        fontFamily={"NotoSansCJKkr"}
-        fontWeight="bold"
-      >
-        JOIN US!
-      </Button>
-      <Flex height="250"></Flex>
     </Flex>
   );
 };
