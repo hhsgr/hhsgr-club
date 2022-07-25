@@ -39,18 +39,18 @@ const Header: FC = () => {
       px={0}
       shadow="md"
       zIndex={1}
-      flexDir={["column", "column", "row"]}
+      flexDir={"row"}
       bgColor="#d9b5fd"
       opacity={"80%"}
       // height={79}
     >
-      <Box fontWeight="bold" fontSize="lg" cursor="pointer">
+      <Box cursor="pointer">
         <Link href="/">
           <Image src={`../images/${logoImage}`} alt="LOGO" padding="1" />
         </Link>
       </Box>
       <Flex alignItems="center">
-        <Box>
+        <Flex display={["none", "none", "flex"]}>
           {scrollLink.map((v, i) => {
             return (
               <ScrollLink key={i} to={v} spy={true} smooth={true}>
@@ -65,12 +65,8 @@ const Header: FC = () => {
               </ScrollLink>
             );
           })}
-        </Box>
-        <Flex
-          alignItems="center"
-          my={[4, 4, 0]}
-          flexDir={["column", "row", "row"]}
-        >
+        </Flex>
+        <Flex alignItems="center" my={[4, 4, 0]} flexDir="row">
           <Link href={openseaURL}>
             <Button variant="ghost" size={["xs", "xs", "sm"]}>
               <Image src="../images/opensea.png" alt="opensea" w={6} />

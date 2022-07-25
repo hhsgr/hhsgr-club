@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Image, Link } from "@chakra-ui/react";
 import { FC, useState } from "react";
+import { FaDiscord } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
 // @ 타이틀 이미지는 이미지에 마우스를 올리면 Gif 이미지가 나오도록 하였습니다. public/images 교체하셔서 사용하시면 됩니다.
@@ -12,29 +13,47 @@ const Title: FC = () => {
 
   return (
     <Flex
-      minH="100vh"
-      justifyContent="space-between"
-      alignItems="center"
       flexDir="column"
       id="Title"
       w="100%"
       bgColor="#c88be0"
+      alignItems={"center"}
     >
-      <Box position="relative">
-        <Box height="30" bgColor="#8f3bff"></Box>
-        <Image
-          src={`../images/${titleImage}`}
-          // position="absolute"
-          // opacity={isHover ? 0 : 1}
-          // onMouseEnter={() => setIsHover(true)}
-          // onMouseLeave={() => setIsHover(false)}
-          // alt="title"
-        />
-      </Box>
-      <Box height={65}></Box>
+      <Flex
+        w="100%"
+        top="0"
+        justifyContent="space-around"
+        alignItems="center"
+        // shadow="md"
+        // zIndex={1}
+        flexDir="row"
+        bgColor="#d9b5fd"
+        visibility={"hidden"}
+      >
+        <Box cursor="pointer">
+          <Image src={`../images/logo.png`} alt="LOGO" padding="1" />
+        </Box>
+        <Flex alignItems="center" my={[4, 4, 0]} flexDir="row">
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+        </Flex>
+      </Flex>
+      <Flex bgColor={"#8f3bff"}>
+        <Image src={`../images/${titleImage}`} />
+      </Flex>
+      <Box height={10}></Box>
       <Flex
         className="animate__animated animate__slideInRight"
-        flexDir={["column", "row", "row"]}
         alignItems="center"
         justifyContent="space-around"
       >
@@ -78,15 +97,15 @@ const Title: FC = () => {
           p={2}
         />
       </Flex>
-      <Box height={65}></Box>
+      <Box height={10}></Box>
       <Button
-        borderRadius={64}
-        height={10}
+        borderRadius="2xl"
+        p="5"
         bgColor="#519cf9"
         color="#fff"
         fontFamily={"NotoSansCJKkr"}
         fontWeight="bold"
-        fontSize={"20"}
+        fontSize={"2vw"}
       >
         CHECK IT ON OPENSEA!
       </Button>

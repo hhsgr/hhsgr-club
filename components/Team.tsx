@@ -36,11 +36,9 @@ const teamCardConfig = [
 ];
 
 const Team: FC = () => {
-  const { t } = useTranslation("common");
-
   return (
-    <Flex minH="100vh" alignItems="center" id="Team" flexDir="column" w="100%">
-      <Flex height="200"></Flex>
+    <Flex alignItems="center" id="Team" flexDir="column" w="100%">
+      <Flex mt="100"></Flex>
       <Box
         textAlign="center"
         mb={8}
@@ -51,27 +49,22 @@ const Team: FC = () => {
       >
         TEAM
       </Box>
-      <Grid
-        templateColumns={[
-          "repeat(1, 1fr)",
-          "repeat(1, 1fr)",
-          "repeat(2, 1fr)",
-          "repeat(4, 1fr)",
-        ]}
-      >
+      <Flex flexWrap={"wrap"} alignContent="center" justifyContent={"center"}>
         {teamCardConfig.map((v, i) => {
           return (
-            <TeamCard
-              key={i}
-              name={v.name}
-              position={v.position}
-              image={v.image}
-              color={v.color}
-              animation={v.animation}
-            />
+            <Flex>
+              <TeamCard
+                key={i}
+                name={v.name}
+                position={v.position}
+                image={v.image}
+                color={v.color}
+                animation={v.animation}
+              />
+            </Flex>
           );
         })}
-      </Grid>
+      </Flex>
     </Flex>
   );
 };

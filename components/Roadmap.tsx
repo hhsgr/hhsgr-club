@@ -10,15 +10,13 @@ const Roadmap: FC = () => {
   return (
     <Flex
       w="100%"
-      minH="100vh"
       justifyContent="center"
       alignItems="center"
       id="Roadmap"
-      flexDir={["column", "column", "column"]}
+      flexDir="column"
       bgGradient="linear(to-t, #a3d1f3, #bda4e6)"
     >
-      <Flex height="20"></Flex>
-      <Flex w={["full%", "full%", "100%"]} flexDir="column">
+      <Flex mt={"100"} flexDir="column">
         <Flex
           w={["full", "full%"]}
           p={8}
@@ -27,7 +25,7 @@ const Roadmap: FC = () => {
         >
           <Text
             textAlign="center"
-            mb={8}
+            mb={2}
             fontFamily="NotoSansKR"
             fontSize="4vw"
             fontWeight="bold"
@@ -47,11 +45,10 @@ const Roadmap: FC = () => {
             // position="center"
             // alignItems={"center"}
             justifyContent={"center"}
+            marginRight="15%"
           />
           <Image />
-          <Flex width="10%"></Flex>
         </Flex>
-        <Box height={800}></Box>
       </Flex>
     </Flex>
   );

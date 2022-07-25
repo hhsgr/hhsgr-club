@@ -6,16 +6,14 @@ const Story: FC = () => {
   return (
     <Flex
       w="100%"
-      minH="100vh"
       justifyContent="center"
       alignItems="center"
       id="Story"
-      flexDir={["column", "column", "column"]}
+      flexDir="column"
       bgGradient="linear(to-t, #bda4e6, #c88be0)"
     >
-      <Flex height="20"></Flex>
-      <Flex w={["full%", "full%", "100%"]}>
-        <Box w={["full", "full%"]} p={8}>
+      <Flex>
+        <Box mt="100">
           <Text
             textAlign="center"
             mb={8}

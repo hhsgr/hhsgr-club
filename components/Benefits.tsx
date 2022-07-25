@@ -6,19 +6,17 @@ const Benefits: FC = () => {
   return (
     <Flex
       w="100%"
-      minH="100vh"
       justifyContent="center"
       alignItems="center"
       id="Benefits"
       flexDir={["column", "column", "column"]}
       bgGradient="linear(to-t, #83fdfe, #a3d1f3)"
     >
-      <Flex height="20"></Flex>
-      <Flex w={["full%", "full%", "100%"]}>
+      <Flex mt="100">
         <Box w={["full", "full%"]} p={8}>
           <Text
             textAlign="center"
-            mb={8}
+            mb="15"
             fontFamily="NotoSansKR"
             fontSize="4vw"
             fontWeight="bold"
@@ -28,35 +26,35 @@ const Benefits: FC = () => {
           </Text>
         </Box>
       </Flex>
-      <Flex height={"50%"} flexDir={["column", "row", "row"]}>
+      <Flex flexDir={["column", "row", "row"]}>
         <Image
           src={`../images/benefit1.png`}
           borderRadius="2xl"
           p={2}
-          width="50%"
+          width={["100%", "50%"]}
         />
         <Image
           src={`../images/benefit2.png`}
           borderRadius="2xl"
           p={2}
-          width="50%"
+          width={["100%", "50%"]}
         />
       </Flex>
-      <Flex height={"50%"} flexDir={["column", "row", "row"]}>
+      <Flex flexDir={["column", "row", "row"]}>
         <Image
           src={`../images/benefit3.png`}
           borderRadius="2xl"
           p={2}
-          width="50%"
+          width={["100%", "50%"]}
         />
         <Image
           src={`../images/benefit4.png`}
           borderRadius="2xl"
           p={2}
-          width="50%"
+          width={["100%", "50%"]}
         />
       </Flex>
-      <Flex height={120}></Flex>
+      <Flex mb="100"></Flex>
     </Flex>
   );
 };

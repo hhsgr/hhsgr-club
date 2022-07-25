@@ -4,7 +4,7 @@ import { FC } from "react";
 // @ 팀 주소 및 카피라이트에 관한 정보를 입력합니다.
 const contactInfo = "헤롱헤롱술고래(HHSGR) | E-Mail hhsgr.club@gmail.com";
 const copyRight =
-  "COPYRIGHT Proground Inc. 2022 | ALL RIGHT RESERVED | Powered by HHSGR";
+  "COPYRIGHT HHSGR 2022 | ALL RIGHT RESERVED | Powered by HHSGR";
 
 const Footer: FC = () => {
   const { colorMode } = useColorMode();

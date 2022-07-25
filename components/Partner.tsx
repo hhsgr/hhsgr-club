@@ -4,8 +4,8 @@ import { FC } from "react";
 
 const Partner: FC = () => {
   return (
-    <Flex minH="100vh" alignItems="center" id="Team" flexDir="column" w="100%">
-      <Flex height={200}></Flex>
+    <Flex alignItems="center" id="Team" flexDir="column" w="100%">
+      <Flex mt="100"></Flex>
       <Flex>
         <Box
           textAlign="center"
@@ -20,17 +20,17 @@ const Partner: FC = () => {
         <Flex height="130"></Flex>
       </Flex>
       <Button
-        borderRadius={64}
-        height={10}
+        borderRadius="2xl"
+        p="5"
         bgColor="#519cf9"
         color="#fff"
         fontFamily={"NotoSansCJKkr"}
         fontWeight="bold"
-        fontSize={"20"}
+        fontSize={"2vw"}
       >
         JOIN US!
       </Button>
-      <Flex height="200"></Flex>
+      <Flex mb="100"></Flex>
     </Flex>
   );
 };
