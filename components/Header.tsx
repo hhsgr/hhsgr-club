@@ -31,6 +31,7 @@ const Header: FC = () => {
 
   return (
     <Flex
+      position="fixed"
       w="100%"
       top="0"
       justifyContent="space-around"
