@@ -18,11 +18,10 @@ const Title: FC = () => {
       flexDir="column"
       id="Title"
       w="full"
-      bgColor={"#c88be0"}
+      bgColor="#c88be0"
     >
-      <Box height="20%"></Box>
-      <Flex></Flex>
       <Box position="relative">
+        <Box height="30" bgColor="#8f3bff"></Box>
         <Image
           src={`../images/${titleImage}`}
           // position="absolute"
@@ -35,49 +34,47 @@ const Title: FC = () => {
       <Box height={65}></Box>
       <Flex
         className="animate__animated animate__slideInRight"
-        flexDir="row"
+        flexDir={["column", "row", "row"]}
         alignItems="center"
         justifyContent="space-around"
       >
         <Image
           src={`../images/${storyImage}`}
           borderRadius="2xl"
-          width={200}
-          height={200}
+          width="20%"
+          height="20%"
           p={2}
         />
         <Box width={10}></Box>
         <Image
           src={`../images/${storyImage}`}
           borderRadius="2xl"
-          width={200}
-          height={200}
+          width="20%"
+          height="20%"
           p={2}
         />
-        <Box width={10}></Box>
-
+        <Box width={10}></Box>{" "}
         <Image
           src={`../images/${storyImage}`}
           borderRadius="2xl"
-          width={200}
-          height={200}
+          width="20%"
+          height="20%"
           p={2}
         />
-        <Box width={10}></Box>
-
+        <Box width={10}></Box>{" "}
         <Image
           src={`../images/${storyImage}`}
           borderRadius="2xl"
-          width={200}
-          height={200}
+          width="20%"
+          height="20%"
           p={2}
         />
-        <Box width={10}></Box>
+        <Box width={10}></Box>{" "}
         <Image
           src={`../images/${storyImage}`}
           borderRadius="2xl"
-          width={200}
-          height={200}
+          width="20%"
+          height="20%"
           p={2}
         />
       </Flex>
