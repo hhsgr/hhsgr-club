@@ -35,13 +35,7 @@ const Roadmap: FC = () => {
           </Text>
         </Flex>
         <Flex alignItems="center" justifyContent="center">
-          <Image
-            src={`../images/${roadmapImage}`}
-            // position="center"
-            // alignItems={"center"}
-            justifyContent={"center"}
-            marginRight="10%"
-          />
+          <Image src={`../images/${roadmapImage}`} justifyContent={"center"} />
           <Image />
         </Flex>
       </Flex>
