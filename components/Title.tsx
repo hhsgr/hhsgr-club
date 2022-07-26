@@ -4,9 +4,13 @@ import { FaDiscord } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
 // @ 타이틀 이미지는 이미지에 마우스를 올리면 Gif 이미지가 나오도록 하였습니다. public/images 교체하셔서 사용하시면 됩니다.
-const titleImage = "title.png";
+const titleImage = "title_new.png";
 // const titleImageGif = "title.gif";
-const storyImage = "lion.gif";
+const exampleImage1 = "example1.png";
+const exampleImage2 = "example2.png";
+const exampleImage3 = "example3.png";
+const exampleImage4 = "example4.png";
+const exampleImage5 = "example5.png";
 
 const Title: FC = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -15,7 +19,7 @@ const Title: FC = () => {
     <Flex
       flexDir="column"
       id="Title"
-      w="100%"
+      w="full"
       bgColor="#c88be0"
       alignItems={"center"}
     >
@@ -58,40 +62,42 @@ const Title: FC = () => {
         justifyContent="space-around"
       >
         <Image
-          src={`../images/${storyImage}`}
-          borderRadius="2xl"
+          src={`../images/${exampleImage1}`}
+          borderRadius="3xl"
+          borderColor="#fff"
+          border="50"
           width="20%"
           height="20%"
           p={2}
         />
         <Box width={10}></Box>
         <Image
-          src={`../images/${storyImage}`}
-          borderRadius="2xl"
+          src={`../images/${exampleImage2}`}
+          borderRadius="3xl"
           width="20%"
           height="20%"
           p={2}
         />
         <Box width={10}></Box>{" "}
         <Image
-          src={`../images/${storyImage}`}
-          borderRadius="2xl"
+          src={`../images/${exampleImage3}`}
+          borderRadius="3xl"
           width="20%"
           height="20%"
           p={2}
         />
         <Box width={10}></Box>{" "}
         <Image
-          src={`../images/${storyImage}`}
-          borderRadius="2xl"
+          src={`../images/${exampleImage4}`}
+          borderRadius="3xl"
           width="20%"
           height="20%"
           p={2}
         />
         <Box width={10}></Box>{" "}
         <Image
-          src={`../images/${storyImage}`}
-          borderRadius="2xl"
+          src={`../images/${exampleImage5}`}
+          borderRadius="3xl"
           width="20%"
           height="20%"
           p={2}
@@ -100,7 +106,7 @@ const Title: FC = () => {
       <Box height={10}></Box>
       <Button
         borderRadius="2xl"
-        p="5"
+        p="3"
         bgColor="#519cf9"
         color="#fff"
         fontFamily={"NotoSansCJKkr"}

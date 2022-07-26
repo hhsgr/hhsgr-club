@@ -36,7 +36,6 @@ const Header: FC = () => {
       top="0"
       justifyContent="space-around"
       alignItems="center"
-      px={0}
       shadow="md"
       zIndex={1}
       flexDir={"row"}
