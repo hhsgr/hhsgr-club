@@ -1,7 +1,7 @@
 import { AbiItem } from "caver-js";
 
 // @ 스마트 컨트랙트의 주소를 기입 합니다.
-export const MINT_NFT_ADDRESS = "0xDBD1B92A32eA88EbB1AeBecf3887307d00DDe23D";
+export const MINT_NFT_ADDRESS = "0x9ee8759b819b092209f47c36b62933f7cde44257";
 
 // @ Klaytn IDE로 부터 ABI를 가져옵니다.
 export const MINT_NFT_ABI: AbiItem[] = [
@@ -15,11 +15,6 @@ export const MINT_NFT_ABI: AbiItem[] = [
       {
         internalType: "string",
         name: "_symbol",
-        type: "string",
-      },
-      {
-        internalType: "string",
-        name: "_metadataURI",
         type: "string",
       },
     ],
@@ -95,10 +90,23 @@ export const MINT_NFT_ABI: AbiItem[] = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_amount",
+        type: "uint256",
+      },
+    ],
+    name: "batchMintNFT",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "mintNFT",
     outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -169,7 +177,7 @@ export const MINT_NFT_ABI: AbiItem[] = [
       },
       {
         internalType: "bytes",
-        name: "_data",
+        name: "data",
         type: "bytes",
       },
     ],
@@ -192,6 +200,19 @@ export const MINT_NFT_ABI: AbiItem[] = [
       },
     ],
     name: "setApprovalForAll",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_metadataURI",
+        type: "string",
+      },
+    ],
+    name: "setTokenURI",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -309,6 +330,19 @@ export const MINT_NFT_ABI: AbiItem[] = [
       },
     ],
     name: "isApprovedForAll",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "isRevealed",
     outputs: [
       {
         internalType: "bool",
@@ -492,7 +526,7 @@ export const MINT_NFT_ABI: AbiItem[] = [
         type: "address",
       },
     ],
-    name: "whitelists",
+    name: "whitelist",
     outputs: [
       {
         internalType: "bool",
