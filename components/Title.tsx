@@ -104,17 +104,19 @@ const Title: FC = () => {
         />
       </Flex>
       <Box height={10}></Box>
-      <Button
-        borderRadius="2xl"
-        p="3"
-        bgColor="#519cf9"
-        color="#fff"
-        fontFamily={"NotoSansCJKkr"}
-        fontWeight="bold"
-        fontSize={"2vw"}
-      >
-        CHECK IT ON OPENSEA!
-      </Button>
+      <Link href="https://opensea.io/TipsyWhaleClub">
+        <Button
+          borderRadius="2xl"
+          p="3"
+          bgColor="#519cf9"
+          color="#fff"
+          fontFamily={"NotoSansCJKkr"}
+          fontWeight="bold"
+          fontSize={"2vw"}
+        >
+          CHECK IT ON OPENSEA!
+        </Button>
+      </Link>
     </Flex>
   );
 };
