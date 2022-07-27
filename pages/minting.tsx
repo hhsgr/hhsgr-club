@@ -41,7 +41,7 @@ const Minting: NextPage = () => {
         type: "SMART_CONTRACT_EXECUTION",
         from: account,
         to: MINT_NFT_ADDRESS,
-        gas: 300 * 10 ** 18,
+        gas: 3000000,
         data: mintNFTContract?.methods.mintNFT().encodeABI(),
       });
 
