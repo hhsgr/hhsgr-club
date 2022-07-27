@@ -116,7 +116,7 @@ const Minting: NextPage = () => {
           <Image src={`../images/minting_page.png`} />
         </Flex>
       </Flex>
-      <Flex mt="10">
+      <Flex my="10">
         <Flex mr="10">
           {account === "" ? (
             <Button onClick={onClickKaikas} size="lg" colorScheme="orange">
