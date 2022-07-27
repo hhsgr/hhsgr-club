@@ -6,6 +6,7 @@ import { NextPage } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useState } from "react";
+import { FaDiscord } from "react-icons/fa";
 
 const Minting: NextPage = () => {
   const [account, setAccount] = useState<string>("");
@@ -79,63 +80,69 @@ const Minting: NextPage = () => {
   };
 
   return (
-    <Flex
-      justifyContent="center"
-      alignItems="center"
-      minH="100vh"
-      flexDir="column"
-    >
-      {account === "" ? (
-        <Button onClick={onClickKaikas} size="lg" colorScheme="orange">
-          <Image
-            src={
-              colorMode === "light"
-                ? "../images/kaikas-white.png"
-                : "../images/kaikas.png"
-            }
-            w={8}
-            mr={2}
-            alt="kaikas"
-          />
-          Connect to Kaikas
-        </Button>
-      ) : (
-        <Flex>
-          <Button fontSize="2xl" colorScheme="orange" variant="ghost">
-            Account - {account}
+    <Flex justifyContent="center" alignItems="center" flexDir="column">
+      <Flex
+        w="100%"
+        top="0"
+        justifyContent="space-around"
+        alignItems="center"
+        // shadow="md"
+        // zIndex={1}
+        flexDir="row"
+        bgColor="#d9b5fd"
+        visibility={"hidden"}
+      >
+        <Box cursor="pointer">
+          <Image src={`../images/logo.png`} alt="LOGO" padding="1" />
+        </Box>
+        <Flex alignItems="center" my={[4, 4, 0]} flexDir="row">
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
           </Button>
-          <Button onClick={() => setAccount("")} colorScheme="orange">
-            Disconnect
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
+          </Button>
+          <Button variant="ghost" size={["xs", "xs", "sm"]}>
+            <FaDiscord size={24} />
           </Button>
         </Flex>
-      )}
-      <Flex mt="8" justifyContent="center" alignItems="center">
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          w={256}
-          h={256}
-          border="2px"
-          borderColor={colorMode === "light" ? "gray.300" : "gray.500"}
-          borderRadius="lg"
-        >
-          {newNFT ? (
-            <Image
-              src={newNFT.image}
-              borderRadius="lg"
-              fallbackSrc="../images/loading.png"
-              alt="nft"
-            />
+      </Flex>
+      <Flex justifyContent="center" alignItems="center">
+        <Flex bgColor={"#8f3bff"}>
+          <Image src={`../images/minting_page.png`} />
+        </Flex>
+      </Flex>
+      <Flex mt="10">
+        <Flex mr="10">
+          {account === "" ? (
+            <Button onClick={onClickKaikas} size="lg" colorScheme="orange">
+              <Image
+                src={
+                  colorMode === "light"
+                    ? "../images/kaikas-white.png"
+                    : "../images/kaikas.png"
+                }
+                w={8}
+                mr={2}
+                alt="kaikas"
+              />
+              Connect to Kaikas
+            </Button>
           ) : (
-            <Image
-              src="../images/loading.png"
-              borderRadius="lg"
-              alt="loading"
-            />
+            <Flex>
+              <Button fontSize="2xl" colorScheme="orange" variant="ghost">
+                Account - {account}
+              </Button>
+              <Button onClick={() => setAccount("")} colorScheme="orange">
+                Disconnect
+              </Button>
+            </Flex>
           )}
         </Flex>
-        <Flex ml={8} direction="column" minH={512} minW={300}>
-          <Text>Price : 0 Klay</Text>
+        <Flex>
           <Button
             size="lg"
             colorScheme="green"
@@ -144,50 +151,8 @@ const Minting: NextPage = () => {
             isLoading={isLoading}
             loadingText="Loading ..."
           >
-            Minting
+            Mint Now !
           </Button>
-          <Box mt={8}>
-            {newNFT ? (
-              <>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Name</Text>
-                  <Text>: {newNFT.name}</Text>
-                </Flex>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Description</Text>
-                  <Text>: </Text>
-                </Flex>
-                <Text fontSize="xl" mt={4}>
-                  {newNFT.description}
-                </Text>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Attributes</Text>
-                </Flex>
-                {newNFT.attributes.map((v: any, i: number) => {
-                  return (
-                    <Flex key={i} fontSize="xl" mt={4}>
-                      <Text w="50%">{v.trait_type}</Text>
-                      <Text>: {v.value}</Text>
-                    </Flex>
-                  );
-                })}
-              </>
-            ) : (
-              <>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Name</Text>
-                  <Text>:</Text>
-                </Flex>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Description</Text>
-                  <Text>:</Text>
-                </Flex>
-                <Flex fontSize="xl" mt={4}>
-                  <Text w="50%">Attributes</Text>
-                </Flex>
-              </>
-            )}
-          </Box>
         </Flex>
       </Flex>
     </Flex>
