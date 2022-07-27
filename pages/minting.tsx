@@ -41,6 +41,7 @@ const Minting: NextPage = () => {
         type: "SMART_CONTRACT_EXECUTION",
         from: account,
         to: MINT_NFT_ADDRESS,
+        value: caver.utils.toPeb("300", "KLAY"),
         gas: 3000000,
         data: mintNFTContract?.methods.mintNFT().encodeABI(),
       });
